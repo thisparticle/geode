@@ -1,0 +1,1649 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <!-- Meta tags for social media banners, these should be filled in appropriatly as they are your "business card" -->
+        <!-- Replace the content tag with appropriate information -->
+        <meta name="description" content="DESCRIPTION META TAG">
+        <meta property="og:title" content="SOCIAL MEDIA TITLE TAG"/>
+        <meta property="og:description" content="SOCIAL MEDIA DESCRIPTION TAG TAG"/>
+        <meta property="og:url" content="URL OF THE WEBSITE"/>
+        <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X630-->
+        <meta property="og:image" content="static/image/your_banner_image.png" />
+        <meta property="og:image:width" content="1200"/>
+        <meta property="og:image:height" content="630"/>
+
+
+        <meta name="twitter:title" content="TWITTER BANNER TITLE META TAG">
+        <meta name="twitter:description" content="TWITTER BANNER DESCRIPTION META TAG">
+        <!-- Path to banner image, should be in the path listed below. Optimal dimenssions are 1200X600-->
+        <meta name="twitter:image" content="static/images/your_twitter_banner_image.png">
+        <meta name="twitter:card" content="summary_large_image">
+        <!-- Keywords for your paper to be indexed by-->
+        <meta name="keywords" content="Geometrically Degenerate, Dataset">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+        <title>GEODE Dataset</title>
+        <link rel="icon" type="image/x-icon" href="static/images/favicon.ico">
+        <link href="https://fonts.googleapis.com/css?family=Google+Sans|Noto+Sans|Castoro"
+        rel="stylesheet">
+
+        <link rel="stylesheet" href="static/css/bulma.min.css">
+        <link rel="stylesheet" href="static/css/bulma-carousel.min.css">
+        <link rel="stylesheet" href="static/css/bulma-slider.min.css">
+        <link rel="stylesheet" href="static/css/fontawesome.all.min.css">
+        <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+        <link rel="stylesheet" href="static/css/index.css">
+
+        <script src="https://cdn.plot.ly/plotly-2.24.1.min.js" charset="utf-8"></script><!-- Load plotly.js into the DOM -->
+        <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="https://documentcloud.adobe.com/view-sdk/main.js"></script>
+        <script defer src="static/js/fontawesome.all.min.js"></script>
+        <script src="static/js/bulma-carousel.min.js"></script>
+        <script src="static/js/bulma-slider.min.js"></script>
+        <script src="static/js/index.js"></script>
+        <style>
+            .table-content {
+                display: none;
+            }
+            .show-hide-button {
+                cursor: pointer;
+                font-weight: bold;
+            }
+        </style>
+    </head>
+    <body>
+
+
+        <section class="hero">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered">
+                    <div class="column has-text-centered">
+                        <!-- <h1 class="title is-1 publication-title">S<sup>3</sup>E-Degeneration Dataset: Pushing SLAM Towards Robustness in Geometrically Degenerate Environments</h1> -->
+                        <h1 class="title is-1 publication-title">Heterogeneous LiDAR Dataset for Benchmarking Robust Localization in Diverse Degenerate Scenarios</h1>
+                        <div class="is-size-5 publication-authors">
+                            <!-- Paper authors -->
+                            <span class="author-block">
+                            <a href="https://thisparticle.github.io/" target="_blank">Zhiqiang Chen</a><sup>1,2</sup>, Yuhua Qi<sup>1</sup>, Dapeng Feng<sup>1</sup>, Shipeng Zhong<sup>1</sup>, Xiangcheng Hu<sup>3</sup>, Jin Wu<sup>3</sup>,
+                            Kelin Peng<sup>1</sup>, Hongbo Chen<sup>1</sup>, Peng Lu<sup>2</sup>
+                            </span>
+                            <!-- <span class="author-block">
+                                Xianjia Yu<sup>*</sup>,
+                            </span>
+                            <span class="author-block">
+                                <a href="https://scai.ethz.ch/people/jorge-pena.html" target="_blank">Jorge Peña Queralta</a><sup>*,+</sup>
+                            </span> -->
+                        </div>
+
+                        <div class="is-size-5 publication-authors">
+                        <!-- <span class="author-block"><sup>*</sup>SUN YAT-SEN UNIVERSITY, <sup>+</sup>ETH Zurich</span> -->
+                        <span class="author-block"><sup>1</sup>Sun Yat-sen University, <sup>2</sup>The University of Hong Kong, <sup>3</sup>The Hong Kong
+                            University of Science and Technology</span>
+                        </div>
+
+                        <div class="column has-text-centered">
+                            <div class="publication-links">
+                                        <!-- Arxiv PDF link -->
+                                <span class="link-block">
+                                    <a href="https://geode.github.io" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-file-pdf"></i>
+                                        </span>
+                                        <span>Paper</span>
+                                    </a>
+                                </span>
+
+                                <!-- Github link -->
+                                <span class="link-block">
+                                    <a href="https://github.com/PengYu-Team/GEODE_dataset" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                    <span class="icon">
+                                        <i class="fab fa-github"></i>
+                                </span>
+                                <span>Code</span>
+                                    </a>
+                                </span>
+
+                                    <!-- ArXiv abstract Link -->
+                                <span class="link-block">
+                                    <a href="https://arxiv.org/abs/" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="ai ai-arxiv"></i>
+                                        </span>
+                                        <span>arXiv</span>
+                                    </a>
+                                </span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Paper abstract -->
+        <section class="section hero is-light">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">Abstract</h2>
+                    <div class="content has-text-justified">
+                        <p style="margin-bottom: 0.5em">
+                            For robotic systems to achieve greater autonomy, advancements in 3D LiDAR SLAM are essential. Despite this, the majority of current public datasets do not adequately reflect environments with geometric degeneracy, which poses challenges for the development and testing of robust SLAM algorithms.
+                            </p>
+                        <p style="margin-bottom: 0.5em">
+                            <!-- We fill this gap with S<sup>3</sup>E-Degeneration, a multi-LiDAR, multi-scenario dataset featuring extensive segments of real-world geometric degeneracy. This dataset addresses the representation void with 17 trajectories that cover over 6 km in seven diverse settings. The data was designed to push the limits of LiDAR SLAM and collected by different LiDAR sensors in various motion conditions to develop general-purpose algorithms. In addition, we conduct evaluations of state-of-the-art SLAM approaches to identify the current limitations of LiDAR SLAM. This comprehensive dataset will be available to the public on GitHub \url{https://github.com/gaowenliang/imu_utils}, facilitating further advancements in LiDAR-based SLAM. -->
+
+                            To address this limitation, we have developed GEODE, a dataset designed with diversity in mind, featuring multiple LiDAR sensors and various scenarios. GEODE offers 64 distinct trajectories that span more than 64 kilometers across seven different environments. The meticulous data collection process aimed to introduce real-world <b>GEO</b>metric <b>DE</b>generacy and varying motion conditions, providing a robust testbed for SLAM methods. Our goal is for GEODE to enhance localization accuracy in geometrically complex settings and to drive future advancements in LiDAR-based SLAM technologies.
+                            
+                            <!-- To address this gap, we present GEODE, a comprehensive multi-LiDAR, multi-scenario dataset that extensively incorporates segments of real-world <b>GEO</b>metric <b>DE</b>generacy. The dataset encompasses 17 trajectories spanning over 6 kilometers across seven diverse settings. The data collection process was meticulously designed to push the boundaries of LiDAR SLAM, utilizing different LiDAR sensors under various motion conditions to facilitate the development of general-purpose algorithms. We conduct evaluations of state-of-the-art SLAM approaches to identify the current limitations of LiDAR SLAM techniques. This comprehensive dataset will be made available on GitHub, fostering further advancements in the field of LiDAR-based SLAM. -->
+                        </p>
+                        <!-- <p style="margin-bottom: 0.5em">
+                            In addition to the dataset, we provide a baseline comparison with recent LiDAR-based UAV tracking algorithms, benchmarking the performance with different sensors, UAVs, and algorithms. Importantly, 
+                            our dataset shows that current methods have shortcomings and are unable to track UAVs consistently across different scenarios. 
+                        </p> -->
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        <!-- End paper abstract -->
+
+        <br>
+
+        <!-- System Overview -->
+        <section class="section hero is-small">
+            <div class="container is-max-desktop">
+                <div class="columns is-centered has-text-centered">
+                <div class="column is-four-fifths">
+                    <h2 class="title is-3">System Overview</h2>
+                    <div class="content has-text-justified">
+                        <div class="item">
+                            <!-- Your image here --> 
+                            <img src="static/images/hardware_image.png" alt="Hardware Photo"/>          
+                        </div>
+                        <p>
+                            GEODE is a groundbreaking dataset designed to enhance the development of LiDAR SLAM algorithms in challenging environments characterized by geometric degeneracy. This dataset stands out due to its incorporation of multiple sensor types and its versatility in operating across different scanning methods and fields of view. To achieve this, we have developed three distinct data acquisition systems, each utilizing a shared IMU and stereo camera but equipped with different LiDAR sensors. Our adaptable setup is designed for easy integration onto various platforms, enabling effective data collection in conditions that often hinder LiDAR-based SLAM performance, such as low geometric features, erratic motion dynamics, and fluctuating environmental factors.
+                        </p>
+                        <!-- <p>
+                            By meticulously synchronizing all sensors, we ensure that the data gathered instantaneously across various platforms shares uniform timestamps, crucial for precise data alignment. Furthermore, leveraging the hardware triggering capabilities of sensors, we activate these features to capture sensor data simultaneously, a method that significantly boosts the precision and dependability of our dataset
+                            All sensors are meticulously synchronized to guarantee that the data culled at any given instant across the platforms is consistently timestamped. 
+                            Concurrently, for those sensors equipped with hardware triggering capabilities, we implement this feature to ensure that the sensor data is captured simultaneously, thereby enhancing the accuracy and reliability of the collected information.
+                        </p> -->
+                        <div class="item" style="text-align: center;">
+                            <!-- Your image here --> 
+                            <!-- <img src="static/images/Time_Synchronization.png" alt="Time Synchronization"/>     -->
+                            <img src="static/images/Time_Synchronization.png" alt="Time Synchronization" style="width: 50%; height: auto;"/>  
+                        </div>
+                        <h5 class="subtitle has-text-centered">
+                            Our FPGA-based time synchronization module enables multi-channel output for sensor synchronization.
+                        </h5>
+                        <p>
+                            Furthermore, the dataset includes accurate ground-truth trajectories for each data sequence, as well as ground-truth maps for selected indoor scenarios. The choice of equipment is tailored to the specific scene requirements: we utilize GNSS/INS-RTK for outdoor data collection, the Leica MS60 for indoor settings, Vicon vere2 for flat surface sequences, and the Leica RTC360 for generating ground-truth maps in stairway sequences.
+                        </p>
+                        <div class="item" style="text-align: center;">
+                            <!-- Your image here --> 
+                            <!-- <img src="static/images/Time_Synchronization.png" alt="Time Synchronization"/>     -->
+                            <img src="static/images/gt_device.png" alt="Time Synchronization" style="width: 100%; height: auto;"/>  
+                        </div>
+                    </div>
+                </div>
+                </div>
+            </div>
+        </section>
+        <!-- End System Overview -->
+
+        <br>
+
+        <!-- Download -->
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Dataset</h2>
+                            <div class="content has-text-justified">
+                                <p>
+                                    The GEODE dataset includes three essential attributes:
+                                    <ul type="i">
+                                        <li><b>Varied LiDAR Types</b>: The GEODE dataset facilitates LiDAR-based localization with an array of sensors, including both rotating and non-repetitive LiDARs, offering diverse fields of view and scanning configurations.
+                                        </li>
+                                        <li><b>Multi-Degenerate Scenarios</b>: This comprehensive dataset delves into an array of complex geometric scenarios such as flat surfaces, stairways, subway tunnels, rough off-road terrains, inland waterways, urban tunnels, and bridges. It offers valuable insights into the typical challenges encountered by LiDAR technologies and serves as a foundation for advancing algorithmic methods to address these issues.
+                                        </li>
+                                        <img src="static/images/geode.png" alt="Hardware Photo"/>  
+                                        <li><b>Diverse Platform Characteristics</b>: Data for the GEODE dataset were gathered using four distinct platforms: a handheld unit, an unmanned ground vehicle (UGV), a sailboat, and a traditional vehicle. Each platform contributes unique motion dynamics, enriching the dataset’s applicability.
+                                        </li>
+                                        <img src="static/images/Diverse_Platform_Characteristics.png" alt="Hardware Photo"/> 
+                                    </ul>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-5">Scenarios</h2>
+                        </div>
+                    </div>
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/Shield_metro_tunnel.jpg" alt="Data Sample"/>
+                            <h2 class="subtitle has-text-centered">
+                                Metro Tunnels (Shield Method): This environment features smooth tunnel walls, presenting a highly uniform setting. Data collection aims to assess the sensor's performance in this geometrically repetitive and degenerate space.
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/Tunneling_metro_tunnel.jpg" alt="Data Sample"/>
+                            <h2 class="subtitle has-text-centered">
+                                Metro Tunnels (Mine Tunneling Method): Featuring uneven tunnel walls, this environment provides a more complex surface for data capture. The focus here is on how irregular shapes influence sensor readings compared to more regular environments.
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/Inland_Waterways.jpg" alt="Data Sample"/>
+                            <h2 class="subtitle has-text-centered">
+                                Inland Waterways: Collecting data over water surfaces introduces challenges such as signal reflections and sparse feature points. The emphasis is on the sensor's performance amidst water-induced noise and absorption.
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/Off-road.jpg" alt="Data Sample"/>
+                            <h2 class="subtitle has-text-centered">
+                                Off-road Terrain: A ground vehicle traverses a grassy track, collecting data at various speeds. This scenario examines the sensor's ability to handle natural, uneven terrain and the challenges of long-distance data acquisition.
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/Bridges.jpg" alt="Data Sample"/>
+                            <h2 class="subtitle has-text-centered">
+                                Bridge: This scene, flanked by water on both sides, presents a uniform environment with repetitive features. Data collection highlights the difficulties in achieving accurate localization due to the lack of distinct landmarks.
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/Urban_Tunnel.jpg" alt="Data Sample"/>
+                            <h2 class="subtitle has-text-centered">
+                                Urban Tunnel: Data is collected in featureless urban tunnels, with challenges including dynamic moving vehicles and abrupt changes in lighting conditions. The focus is on the difficulties in scan matching within these low-texture environments.
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/stairs.jpg" alt="Data Sample"/>
+                            <h2 class="subtitle has-text-centered">
+                                Stairs: Data collection occurs in stairwells, which include both steps and walls. Different sensors were used to capture this confined space, focusing on the challenges of limited vertical field of view and the distinguishability of scans.
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <!-- Your image here -->
+                            <img src="static/images/Flat_Surfaces.jpeg" alt="Data Sample"/>
+                            <h2 class="subtitle has-text-centered">
+                                Flat Surfaces: In this scenario, a solid-state LiDAR captures the ground plane, observing movements ranging from slow to rapid. The sensor's perception is limited to a single flat surface due to its constrained field of view.
+                            </h2>
+                        </div>
+                    </div>
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-5">Data format</h2>
+                            <div class="content has-text-justified">
+                                <p>
+                                    The GEODE dataset offers raw sensor data and corresponding ROS bag files. The raw data includes images, text files, and binary files for storing point clouds. The images comprise RGB data from a binocular camera, reflectivity images, and depth images from an Ouster radar. IMU data from the Xsens MTi-30 and the radar-integrated IMU are stored in text files, which include the following information: timestamp, roll, pitch, yaw, angular velocities, and linear accelerations. Point cloud data is sourced from Velodyne, Ouster, and other topics, and saved in binary files. Each file is timestamped and contains specific data for each sensor: Velodyne provides <em>[x, y, z, intensity, ring, time]</em>; Ouster includes <em>[x, y, z, intensity, t, reflectivity, ring, ambient, range]</em>; and Livox offers <em>[x, y, z, intensity, tag, line]</em>. For a comprehensive overview of the file structure in the GEODE dataset, please refer to the provided link.
+                                    <!-- <title>可展开的文件树示例</title> -->
+                                    <style>
+                                        ul {
+                                          list-style-type: none;
+                                          padding-left: 20px; /* 缩进子列表 */
+                                        }
+                                        li {
+                                          margin: 5px 0;
+                                          cursor: pointer; /* 鼠标悬停时显示指针 */
+                                        }
+                                        .folder::before {
+                                          content: "📁"; /* 文件夹图标 */
+                                        }
+                                        .file::before {
+                                          content: "📄"; /* 文件图标 */
+                                        }
+                                        .collapsed > ul {
+                                          display: none; /* 默认隐藏子列表 */
+                                        }
+                                    </style>
+                                    </head>
+                                    <body>
+                                    <!-- <h1>可展开的文件树示例</h1> -->
+                                    <ul>
+                                        <li class="folder" onclick="toggleFolder(this)">GEODE/(Click here to view the file structure of the GEODE dataset)
+                                        <ul>
+                                            <!-- <li class="file">文档.txt</li>
+                                            <li class="file">报告.pdf</li> -->
+                                            <li class="folder" onclick="toggleFolder(this)">sensor data
+                                            <ul>
+                                                <li class="folder" onclick="toggleFolder(this)"> map_env/sequence_id
+                                                <li class="file">sequence_id.bag</li>
+                                                <li class="file">sequence_id.zip</li>
+                                                <li class="folder" onclick="toggleFolder(this)"> LiDAR
+                                                    <ul>
+                                                        <li class="folder" onclick="toggleFolder(this)"> bin
+                                                        <li class="file">timestamp.bin</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="folder" onclick="toggleFolder(this)"> depth image<sup>*</sup>
+                                                        <li class="file">timestamp.jpg</li>
+                                                    </ul>
+                                                    <ul>
+                                                        <li class="folder" onclick="toggleFolder(this)"> reflectivity image<sup>*</sup>
+                                                        <li class="file">timestamp.jpg</li>
+                                                    </ul>
+                                                <li class="folder" onclick="toggleFolder(this)"> Camera
+                                                    <ul>
+                                                        <li class="folder" onclick="toggleFolder(this)"> image_left
+                                                        <li class="file">timestamp.jpg</li>
+                                                        <li class="folder" onclick="toggleFolder(this)"> iamge_right
+                                                        <li class="file">timestamp.jpg</li>
+                                                    </ul>
+                                                <li class="folder" onclick="toggleFolder(this)"> IMU
+                                                <li class="file">imu.txt</li>
+                                            </ul>
+                                            </li>
+                                            <li class="folder" onclick="toggleFolder(this)">calibration files/
+                                                <li class="file">device_id.yaml</li>
+                                            <li class="folder" onclick="toggleFolder(this)">groundtruth/
+                                                <ul>
+                                                    <li class="folder" onclick="toggleFolder(this)"> map
+                                                    <li class="file">map_env.las</li>
+                                                </ul>
+                                                <ul>
+                                                    <li class="folder" onclick="toggleFolder(this)"> traj
+                                                    <li class="file">map_env.las</li>
+                                                </ul>
+                                        </ul>
+                                        </li>
+                                    </ul>
+
+                                    <script>
+                                        function toggleFolder(folder) {
+                                        const ul = folder.querySelector('ul');
+                                        if (ul.style.display === 'none') {
+                                            ul.style.display = 'block';
+                                            folder.classList.remove('collapsed');
+                                        } else {
+                                            ul.style.display = 'none';
+                                            folder.classList.add('collapsed');
+                                        }
+                                        }
+
+                                        // 初始时隐藏所有子列表
+                                        document.querySelectorAll('.folder').forEach(function(folder) {
+                                        toggleFolder(folder);
+                                        });
+                                    </script>
+                                </p>
+                                <p>
+                                    We present the ROS Topics along with explanations of each message as follows:
+                                    <img src="static/images/rostopic.png" alt="rostopic"/>
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-full">
+                            <h2 class="title is-5">Download</h2>
+                            <div class="content has-text-justified">
+                                <p>
+                                    The dataset comprises raw data, ground truth poses, ground truth maps, and corresponding ROS bag files. These files are accessible for download from <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"><u>Google Drive</u></a>. For specific sequence downloads of ROS bag files, please refer to the table below. Additional download options will be made available in the future.
+                                </p>
+                                
+                                <table>
+                                    <thead>
+                                        <tr class="show-hide-button" style="border-bottom:2px solid black; border-top:2px solid black">
+                                            <th>Sequence</th>
+                                            <th>Devices(Platform)</th>
+                                            <th>Total Size</th>
+                                            <th>Duration</th>
+                                            <th>Dist.</th>
+                                            <th>Difficulty</th>
+                                            <th>Rosbag</th><!-- <th>Ground-truth</th> -->
+                                        </tr>
+                                    </thead>
+                                    <tbody class="table-content">
+                                    <tr>
+                                        <td>Flat_Surfaces_Smooth</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>770.5 MB</td>
+                                        <td>82s</td>
+                                        <td>27.77m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom:2px solid black">
+                                        <td>Flat_Surfaces_Aggressive</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>799.9 MB</td>
+                                        <td>88s</td>
+                                        <td>80.52m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stairs_Alpha</td>
+                                        <td>&alpha;(Handheld)</td>
+                                        <td>3.7 GB</td>
+                                        <td>345s</td>
+                                        <td>301.06m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Stairs_Beta</td>
+                                        <td>&beta;(Handheld)</td>
+                                        <td>11.0 GB</td>
+                                        <td>331s</td>
+                                        <td>300.15m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>                        
+                                    <tr  style="border-bottom:2px solid black">
+                                        <td>Stairs_Gamma</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>2.9 GB</td>
+                                        <td>390s</td>
+                                        <td>300m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel1_gamma</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>4.2 GB</td>
+                                        <td>542s</td>
+                                        <td>691.85 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel2_gamma</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>3.5 GB</td>
+                                        <td>447s</td>
+                                        <td>673.76 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel3_gamma</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>2.7 GB</td>
+                                        <td>338s</td>
+                                        <td>586.76 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel4_gamma</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>2.7 GB</td>
+                                        <td>340s</td>
+                                        <td>501.44 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel5_gamma</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>2.0 GB</td>
+                                        <td>251s</td>
+                                        <td>201.32 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel6_gamma</td>
+                                        <td>&gamma;(Handheld)</td>
+                                        <td>1.8 GB</td>
+                                        <td>224s</td>
+                                        <td>205.20 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel7_beta</td>
+                                        <td>&beta;(Handheld)</td>
+                                        <td>18.1 GB</td>
+                                        <td>516s</td>
+                                        <td>602.24 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel8_beta</td>
+                                        <td>&beta;(Handheld)</td>
+                                        <td>20.4 GB</td>
+                                        <td>518s</td>
+                                        <td>708.28 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel9_beta</td>
+                                        <td>&beta;(Handheld)</td>
+                                        <td>13.2 GB</td>
+                                        <td>373s</td>
+                                        <td>525.66 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Shield_tunnel10_beta</td>
+                                        <td>&beta;(Handheld)</td>
+                                        <td>16.4 GB</td>
+                                        <td>464s</td>
+                                        <td>632.99 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel1_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>1.7 GB</td>
+                                        <td>208s</td>
+                                        <td>188.31 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel2_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>3.6 GB</td>
+                                        <td>282s</td>
+                                        <td>155.48 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel2_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>9.8 GB</td>
+                                        <td>284s</td>
+                                        <td>155.48 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel2_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>2.2 GB</td>
+                                        <td>261s</td>
+                                        <td>155.48 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel3_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>3.2 GB</td>
+                                        <td>252s</td>
+                                        <td>182.51 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel3_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>9.1 GB</td>
+                                        <td>255s</td>
+                                        <td>182.51 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel3_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>2.1 GB</td>
+                                        <td>254s</td>
+                                        <td>182.51 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel4_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>2.7 GB</td>
+                                        <td>212s</td>
+                                        <td>206.96 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel4_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>8.3 GB</td>
+                                        <td>231s</td>
+                                        <td>206.96 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel4_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>1.9 GB</td>
+                                        <td>223s</td>
+                                        <td>206.96 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel5_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>3.3 GB</td>
+                                        <td>244s</td>
+                                        <td>150.65 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Tunneling_tunnel5_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>8.0 GB</td>
+                                        <td>223s</td>
+                                        <td>150.65 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom:2px solid black">
+                                        <td>Tunneling_tunnel5_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>2.0 GB</td>
+                                        <td>232s</td>
+                                        <td>150.65 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inland_Waterways_Short_Alpha</td>
+                                        <td>&alpha;(Sailboat)</td>
+                                        <td>4.8 GB</td>
+                                        <td>472s</td>
+                                        <td>624.62 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inland_Waterways_Medium_Alpha</td>
+                                        <td>&alpha;(Sailboat)</td>
+                                        <td>9.2 GB</td>
+                                        <td>876s</td>
+                                        <td>1883.72 m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inland_Waterways_Long_Alpha</td>
+                                        <td>&alpha;(Sailboat)</td>
+                                        <td>16.8 GB</td>
+                                        <td>1616s</td>
+                                        <td>2781.19 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inland_Waterways_Short_Beta</td>
+                                        <td>&beta;(Sailboat)</td>
+                                        <td>14.9 GB</td>
+                                        <td>441s</td>
+                                        <td>624.62 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inland_Waterways_Medium_Beta</td>
+                                        <td>&beta;(Sailboat)</td>
+                                        <td>27.6 GB</td>
+                                        <td>812s</td>
+                                        <td>1883.72 m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inland_Waterways_Long_Beta</td>
+                                        <td>&beta;(Sailboat)</td>
+                                        <td>54.7 GB</td>
+                                        <td>1615s</td>
+                                        <td>2781.19 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inland_Waterways_Short_Gamma</td>
+                                        <td>&gamma;(Sailboat)</td>
+                                        <td>3.0 GB</td>
+                                        <td>475s</td>
+                                        <td>624.62 m</td>
+                                        <td>Easy</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Inland_Waterways_Medium_Gamma</td>
+                                        <td>&gamma;(Sailboat)</td>
+                                        <td>5.5 GB</td>
+                                        <td>838s</td>
+                                        <td>1883.72 m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom:2px solid black">
+                                        <td>Inland_Waterways_Long_Gamma</td>
+                                        <td>&gamma;(Sailboat)</td>
+                                        <td>10.8 GB</td>
+                                        <td>1656s</td>
+                                        <td>2781.19 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Offroad1_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>4.6 GB</td>
+                                        <td>426s</td>
+                                        <td>439.81 m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Offroad1_beta</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>14.5 GB</td>
+                                        <td>418s</td>
+                                        <td>439.81m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad1_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>3.0 GB</td>
+                                        <td>484s</td>
+                                        <td>439.81m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad2_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>4.6 GB</td>
+                                        <td>427s</td>
+                                        <td>680.39m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad2_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>14.9 GB</td>
+                                        <td>432s</td>
+                                        <td>680.39m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad2_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>3.0 GB</td>
+                                        <td>421s</td>
+                                        <td>680.39m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad3_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>3.2 GB</td>
+                                        <td>302s</td>
+                                        <td>469.66m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad3_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>11.2 GB</td>
+                                        <td>326s</td>
+                                        <td>469.66m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad3_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>2.3 GB</td>
+                                        <td>322s</td>
+                                        <td>469.66m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad4_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>4.7 GB</td>
+                                        <td>445s</td>
+                                        <td>751.78m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad4_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>14.7 GB</td>
+                                        <td>428s</td>
+                                        <td>751.78m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad4_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>2.9 GB</td>
+                                        <td>403s</td>
+                                        <td>751.78m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad5_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>5.4 GB</td>
+                                        <td>506s</td>
+                                        <td>838.19m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad5_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>16.5 GB</td>
+                                        <td>480s</td>
+                                        <td>838.19m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad5_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>3.4 GB</td>
+                                        <td>478s</td>
+                                        <td>838.19m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad6_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>4.9 GB</td>
+                                        <td>455s</td>
+                                        <td>455.48m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"> 
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                      <tr>
+                                        <td>Offroad6_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>14.3 GB</td>
+                                        <td>416s</td>
+                                        <td>455.48m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                      </tr>
+                                    <tr>
+                                    <td>Offroad6_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>3.1 GB</td>
+                                        <td>437s</td>
+                                        <td>455.48m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Offroad7_alpha</td>
+                                        <td>&alpha;(UGV)</td>
+                                        <td>2.4 GB</td>
+                                        <td>219s</td>
+                                        <td>302.03m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Offroad7_beta</td>
+                                        <td>&beta;(UGV)</td>
+                                        <td>6.3 GB</td>
+                                        <td>183s</td>
+                                        <td>302.03m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom:2px solid black">
+                                        <td>Offroad7_gamma</td>
+                                        <td>&gamma;(UGV)</td>
+                                        <td>1.3 GB</td>
+                                        <td>184s</td>
+                                        <td>302.03m</td>
+                                        <td>Medium</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Urban_Tunnel01</td>
+                                        <td>&alpha;(Vehicle)</td>
+                                        <td>3.2 GB</td>
+                                        <td>285s</td>
+                                        <td>3202.21 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Urban_Tunnel02</td>
+                                        <td>&alpha;(Vehicle)</td>
+                                        <td>3.8 GB</td>
+                                        <td>342s</td>
+                                        <td>4747.11 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom:2px solid black">
+                                        <td>Urban_Tunnel03</td>
+                                        <td>&alpha;(Vehicle)</td>
+                                        <td>3.6 GB</td>
+                                        <td>334s</td>
+                                        <td>6748.56 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bridge01</td>
+                                        <td>&alpha;(Vehicle)</td>
+                                        <td>4.1 GB</td>
+                                        <td>382s</td>
+                                        <td>3968.86 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>Bridge02</td>
+                                        <td>&alpha;(Vehicle)</td>
+                                        <td>4.8 GB</td>
+                                        <td>472s</td>
+                                        <td>7678.28 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    <tr style="border-bottom:2px solid black">
+                                        <td>Bridge03</td>
+                                        <td>&alpha;(Vehicle)</td>
+                                        <td>3.4 GB</td>
+                                        <td>320s</td>
+                                        <td>5023.20 m</td>
+                                        <td>Hard</td>
+                                        <td>
+                                            <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing">
+                                                <u>Rosbag</u>
+                                            </a>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                                </table>
+                                <h5 class="subtitle has-text-centered">
+                                    The dataset is available on <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing"><u>Google Drive</u></a>
+                                </h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- End Download-->
+
+        <br>
+
+        <!-- Data Sequence -->
+        <section class="hero is-small">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Data Sequences</h2>
+                        </div>
+                    </div>
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">Standard Trajectories</h2>
+                        </div>
+                    </div>
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">flat_surfaces</h2>
+                        </div>
+                    </div>  
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <div id='flat_surfaces_smooth'></div>
+                            <h2 class="subtitle has-text-centered">
+                                flat_surfaces_smooth trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='flat_surfaces_aggressive'></div>
+                            <h2 class="subtitle has-text-centered">
+                                flat_surfaces_aggressive trajectory
+                            </h2>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">Shield_tunnel</h2>
+                        </div>
+                    </div>  
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <div id='Shield_tunnel1'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel1 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel2'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel2 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel3'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel3 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel4'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel4 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel5'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel5 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel6'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel6 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel7'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel7 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel8'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel8 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel9'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel9 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Shield_tunnel10'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Shield_tunnel10 trajectory
+                            </h2>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">bridge</h2>
+                        </div>
+                    </div>  
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <div id='bridge01'></div>
+                            <h2 class="subtitle has-text-centered">
+                                bridge1 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='bridge02'></div>
+                            <h2 class="subtitle has-text-centered">
+                                bridge2 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='bridge03'></div>
+                            <h2 class="subtitle has-text-centered">
+                                bridge3 trajectory
+                            </h2>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">Urban_Tunnel</h2>
+                        </div>
+                    </div>  
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <div id='Urban_Tunnel01'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Urban_Tunnel1 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Urban_Tunnel02'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Urban_Tunnel2 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Urban_Tunnel03'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Urban_Tunnel3 trajectory
+                            </h2>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">Co-captured Trajectories</h2>
+                        </div>
+                    </div>
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">Tunneling_tunnel</h2>
+                        </div>
+                    </div>  
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <div id='Tunneling_tunnel1'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Tunneling_tunnel1 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Tunneling_tunnel2'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Tunneling_tunnel2 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Tunneling_tunnel3'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Tunneling_tunnel3 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Tunneling_tunnel4'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Tunneling_tunnel4 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Tunneling_tunnel5'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Tunneling_tunnel5 trajectory
+                            </h2>
+                        </div>
+                    </div>
+
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">Inland_Waterways</h2>
+                        </div>
+                    </div>  
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <div id='Inland_Waterways_Long_beta'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Inland_Waterways_Long trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Inland_Waterways_Medium_beta'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Inland_Waterways_Medium trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Inland_Waterways_Short_beta'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Inland_Waterways_Short trajectory
+                            </h2>
+                        </div>
+                    </div>
+
+                    <br>
+
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-4">Offroad</h2>
+                        </div>
+                    </div>  
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item">
+                            <!-- Your image here -->
+                            <div id='Offroad1'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Offroad1 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Offroad2'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Offroad2 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Offroad3'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Offroad3 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Offroad4'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Offroad4 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Offroad5'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Offroad5 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Offroad6'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Offroad6 trajectory
+                            </h2>
+                        </div>
+                        <div class="item">
+                            <div id='Offroad7'></div>
+                            <h2 class="subtitle has-text-centered">
+                                Offroad7 trajectory
+                            </h2>
+                        </div>
+                    </div>
+
+                    <br>
+
+                </div>
+            </div>
+        </section>
+        <!-- End Data Sequence-->
+
+        <br>
+
+        <!-- Quantitative Results -->
+        <!-- <section class="hero is-light">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Quantitative Results</h2>
+                        </div>
+                    </div>            
+                    <div id="results-carousel" class="carousel results-carousel">
+                        <div class="item has-text-centered">
+                            <img src="static/images/RMSE.png" alt="RMSE Results"/>
+                            <h2 class="subtitle has-text-centered">
+                            Position error (RMSE) for the dynamic scan tracking I<sup>EKF</sup> and I<sup>KF</sup> (N/A when the error diverges because the estimated trajectory is incomplete. Unit: meter)
+                            </h2>
+                        </div>
+                        <div class="item has-text-centered">
+                            <img src="static/images/table_percentage.png" alt="Percentage results"/>
+                            <h2 class="subtitle has-text-centered">
+                            Percentage of successfully estimated trajectories for he dynamic scan tracking I<sup>EKF</sup> and I<sup>KF</sup> on the selected data subset (N/A when the method was not designed for that type of LiDAR)
+                            </h2>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section> -->
+        <section class="hero is-light">
+            <div class="hero-body">
+                <div class="container is-max-desktop">
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-four-fifths">
+                            <h2 class="title is-3">Quantitative Results</h2>
+                        </div>
+                    </div>           
+                    <p>
+                        <div class="item has-text-centered">
+                            <img src="static/images/RMSE.png" alt="rostopic"/>
+                        </div>
+                        <h2 class="subtitle has-text-centered">
+                            Localization accuracy: we calculate translation ATE [m] for each sequence.
+                        </h2>
+                    </p> 
+                </div>
+            </div>
+        </section>
+        <!-- End Quantitative Results-->
+
+        <!--BibTex citation -->
+        <section class="section" id="BibTeX">
+            <div class="container is-max-desktop content">
+                <h2 class="title">Citation</h2>
+                <pre><code>@misc{chen2024heterogeneouslidardatasetbenchmarking,
+    title={Heterogeneous LiDAR Dataset for Benchmarking Robust Localization in Diverse Degenerate Scenarios}, 
+    author={Zhiqiang Chen and Yuhua Qi and Dapeng Feng and Xuebin Zhuang and Hongbo Chen and Xiangcheng Hu and Jin Wu and Kelin Peng and Peng Lu},
+    year={2024},
+    eprint={2409.04961},
+    archivePrefix={arXiv},
+    primaryClass={cs.RO},
+    url={https://arxiv.org/abs/2409.04961}, 
+}</code></pre>
+            </div>
+        </section>
+        <!--End BibTex citation -->
+
+
+        <footer class="footer">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-8">
+                        <div class="content">
+                            <p>
+                            This page was built using the <a href="https://github.com/eliahuhorwitz/Academic-project-page-template" target="_blank">Academic Project Page Template</a>.
+                            </p>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <script src="static/js/dataset.js"></script>
+        <script>
+            $(document).ready(function() {
+                $('.show-hide-button').click(function() {
+                    $('.table-content').toggle();
+                });
+            });
+        </script>
+    </body>
+</html>
