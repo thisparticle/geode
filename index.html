@@ -1607,17 +1607,118 @@
                 <div class="container is-max-desktop">
                     <div class="columns is-centered has-text-centered" id="LiveLeaderboard">
                         <div class="column is-four-fifths">
-                            <h2 class="title is-3 has-text-centered">Live Leaderboard</h2>
+                            <h2 class="title is-3">Live Leaderboard </h2>
                         </div>
                     </div>           
-                    <p>
-                        <div class="item has-text-centered">
-                            <img src="static/images/RMSE.png" alt="rostopic"/>
+                    <div class="columns is-centered has-text-centered">
+                        <div class="column is-one-quarter">
+                            <button id="button-leaderboard1" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard1')">Leaderboard Ouster64</button>
                         </div>
-                        <h2 class="subtitle has-text-centered">
-                            Localization accuracy: we calculate translation ATE [m] for each sequence.
-                        </h2>
-                    </p> 
+                        <div class="column is-one-quarter">
+                            <button id="button-leaderboard2" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard2')">Leaderboard Livox Aiva</button>
+                        </div>
+                        <div class="column is-one-quarter">
+                            <button id="button-leaderboard3" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard3')">Leaderboard VLP16</button>
+                        </div>
+                        <div class="column is-one-quarter">
+                            <button id="button-leaderboard4" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard4')">Leaderboard Multi-LiDAR</button>
+                        </div>
+                    </div>
+
+                    <div id="leaderboard1" class="leaderboard">
+                        <table class="table is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Method</th>
+                                    <th>Setting</th>
+                                    <th>Code</th>
+                                    <th>Average Error</th>
+                                    <th>Runtime</th>
+                                    <th>Environment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows for leaderboard 1 -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="leaderboard2" class="leaderboard" style="display:none;">
+                        <table class="table is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Method</th>
+                                    <th>Setting</th>
+                                    <th>Code</th>
+                                    <th>Average Error</th>
+                                    <th>Runtime</th>
+                                    <th>Environment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows for leaderboard 2 -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="leaderboard3" class="leaderboard" style="display:none;">
+                        <table class="table is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Method</th>
+                                    <th>Setting</th>
+                                    <th>Code</th>
+                                    <th>Average Error</th>
+                                    <th>Runtime</th>
+                                    <th>Environment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows for leaderboard 3 -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <div id="leaderboard4" class="leaderboard" style="display:none;">
+                        <table class="table is-fullwidth">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Method</th>
+                                    <th>Setting</th>
+                                    <th>Code</th>
+                                    <th>Average Error</th>
+                                    <th>Runtime</th>
+                                    <th>Environment</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <!-- Add rows for leaderboard 4 -->
+                            </tbody>
+                        </table>
+                    </div>
+
+                    <script>
+                        function showLeaderboard(id) {
+                            document.querySelectorAll('.leaderboard').forEach(function(leaderboard) {
+                                leaderboard.style.display = 'none';
+                            });
+                            document.getElementById(id).style.display = 'block';
+
+                            document.querySelectorAll('.button[id^="button-leaderboard"]').forEach(function(button) {
+                                button.classList.remove('is-active');
+                                button.style.opacity = '0.5';
+                            });
+                            document.getElementById('button-' + id).classList.add('is-active');
+                            document.getElementById('button-' + id).style.opacity = '1';
+                        }
+
+                        // Initialize the first leaderboard as active
+                        showLeaderboard('leaderboard1');
+                    </script>
                 </div>
             </div>
         </section>
