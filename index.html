@@ -1609,7 +1609,23 @@
                         <div class="column is-four-fifths">
                             <h2 class="title is-3">Live Leaderboard </h2>
                         </div>
-                    </div>           
+                    </div>     
+                    <div class="columns is-centered has-text-left">
+                        <div class="column is-full">
+                            <p style="text-align: left;"></p>
+                                1. We have divided the live leaderboard into four categories based on sensor types: leaderboard-ouster, leaderboard-avia, leaderboard-vlp16, and leaderboard-multi-lidar. This enables users to select the best sensor for achieving the most accurate localization results by focusing solely on the degeneracy detection and mitigation algorithm or by developing algorithms that work across all sensors.
+                            </p>
+                            <p style="text-align: left;"></p>
+                                2. Since we have published the ground truth for all sequences, to prevent invalid submissions from disrupting the leaderboard and providing misleading information, we will review all submitted results before publishing them. For open-source algorithms, we will conduct additional tests and compare them with the submitted results. Algorithms with accurate results will be marked with a ✳, while those with significant discrepancies between our tests and the submitted results will be marked with a ×. Therefore, we encourage submitters of open-source algorithms to provide their configuration files along with their results. Closed-source algorithms will not be marked. This distinction aims to make the leaderboard more readable.
+                            </p>
+                            <p style="text-align: left;"></p>
+                                3. To ensure the accuracy of the leaderboard, we will not add clearly invalid submissions to the leaderboard. However, to maintain transparency, we will display their results in the issue section to demonstrate their invalidity.
+                            </p>
+                            <p style="text-align: left;"></p>
+                                4. As the leaderboard is newly launched, all current results have been tested by the dataset authors' team, and these results are marked with a °. Each tested algorithm is run five times per sequence to obtain an average value. Except for changes in voxel sampling parameters for distinct indoor and outdoor environments, all other parameters remain consistent. Readers can reproduce the results from the paper via the GitHub repository. We welcome the original authors of the tested algorithms to submit their own test results, which we will replace accordingly.
+                            </p>
+                        </div>
+                    </div>      
                     <div class="columns is-centered has-text-centered">
                         <div class="column is-one-quarter">
                             <button id="button-leaderboard1" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard1')">Leaderboard Ouster64</button>
