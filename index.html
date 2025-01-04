@@ -131,11 +131,11 @@
                                 </span></span>
                             <!-- New Page Link -->
                             <span class="link-block">
-                                <a href="#LiveLeaderboard" class="external-link button is-normal is-rounded is-dark">
+                                <a href="#OnlineBenchmark" class="external-link button is-normal is-rounded is-dark">
                                     <span class="icon">
                                         <i class="fas fa-link"></i>
                                     </span>
-                                    <span>Live Leaderboard</span>
+                                    <span>Online Benchmark</span>
                                 </a>
                             </span>
                             <!-- Submit Leaderboard Data Link -->
@@ -145,7 +145,7 @@
                                     <span class="icon">
                                         <i class="fas fa-upload"></i>
                                     </span>
-                                    <span>Submit Leaderboard Data</span>
+                                    <span>Submit Benchmark Data</span>
                                 </a>
                             </span>
                             </div>
@@ -1615,118 +1615,150 @@
         <section class="hero is-light">
             <div class="hero-body">
                 <div class="container is-max-desktop">
-                    <div class="columns is-centered has-text-centered" id="LiveLeaderboard">
+                    <div class="columns is-centered has-text-centered" id="OnlineBenchmark">
                         <div class="column is-four-fifths">
-                            <h2 class="title is-3">Live Leaderboard </h2>
+                            <h2 class="title is-3">Online Benchmark </h2>
                         </div>
                     </div>    
                     <div style="border: 2px solid black; padding: 20px; margin: 20px auto; max-width: 800px; text-align: left; border-radius: 15px;">
+                        <p style="text-align: left;"></p>
+                            1. To maintain the integrity of the leaderboard, we will review all submitted results before publishing. For open-source algorithms, we will conduct additional tests and compare them with the submitted results. Accurate results will be marked with a ✳, while significant discrepancies will be marked with a ×. We encourage submitters to provide configuration files. Closed-source algorithms will not be marked.
+                        </p>
+                        <p style="text-align: left;"></p>
+                            2. The current benchmark results, tested by the dataset authors, are marked with a °. Detailed setups are available at <a href="https://github.com/thisparticle/GEODE_Evaluation" target="_blank" style="text-decoration: underline dotted; color: blue;">GEODE_Evaluation</a>. We invite original authors to submit their results for replacement.
+                        </p>
+                        <p style="text-align: left;"></p>
+                            3. We are planning to create sequences without releasing ground truth data, making the construction of a truly competitive leaderboard possible. Stay tuned!
+                        </p>
+                    </div>
+                    <div style="border: 2px solid black; padding: 20px; margin: 20px auto; max-width: 800px; text-align: left; border-radius: 15px;">
                         <b><u style="display: block; text-align: center;">Additional information used by the methods</u></b>
                         <ul style="list-style-type: none; padding: 0;">
-                            <li><img src="./The KITTI Vision Benchmark Suite_files/icon_st.png"> Stereo: Method uses left and right (stereo) images</li>
-                            <li><img src="./The KITTI Vision Benchmark Suite_files/icon_la.png"> Laser Points: Method uses point clouds from Velodyne laser scanner</li>
-                            <li><img src="./The KITTI Vision Benchmark Suite_files/icon_lc.png"> Loop Closure Detection: This method is a SLAM method that detects loop closures</li>
+                            <li><img src="static/images/mono.png" style="height: 1em;"> Mono: Method uses left or right images</li>
+                            <li><img src="static/images/stereo.png" style="height: 1em;"> Stereo: Method uses left and right (stereo) images</li>
+                            <li><img src="static/images/lidar.png" style="height: 1em;"> Laser Points: Method uses point clouds from laser scanner</li>
+                            <li><img src="static/images/imu.png" style="height: 1em;"> IMU: Method uses IMU data</li>
                         </ul>
                     </div>
-                    <div class="columns is-centered has-text-left">
-                        <div class="column is-full">
-                            <p style="text-align: left;"></p>
-                                1. We have divided the live leaderboard into four categories based on sensor types: leaderboard-ouster, leaderboard-avia, leaderboard-vlp16, and leaderboard-multi-lidar. This enables users to select the best sensor for achieving the most accurate localization results by focusing solely on the degeneracy detection and mitigation algorithm or by developing algorithms that work across all sensors.
-                            </p>
-                            <p style="text-align: left;"></p>
-                                2. Since we have published the ground truth for all sequences, to prevent invalid submissions from disrupting the leaderboard and providing misleading information, we will review all submitted results before publishing them. For open-source algorithms, we will conduct additional tests and compare them with the submitted results. Algorithms with accurate results will be marked with a ✳, while those with significant discrepancies between our tests and the submitted results will be marked with a ×. Therefore, we encourage submitters of open-source algorithms to provide their configuration files along with their results. Closed-source algorithms will not be marked. This distinction aims to make the leaderboard more readable.
-                            </p>
-                            <p style="text-align: left;"></p>
-                                3. To ensure the accuracy of the leaderboard, we will not add clearly invalid submissions to the leaderboard. However, to maintain transparency, we will display their results in the issue section to demonstrate their invalidity.
-                            </p>
-                            <p style="text-align: left;"></p>
-                                4. As the leaderboard is newly launched, all current results have been tested by the dataset authors' team, and these results are marked with a °. Each tested algorithm is run five times per sequence to obtain an average value. Except for changes in voxel sampling parameters for distinct indoor and outdoor environments, all other parameters remain consistent. Readers can reproduce the results from the paper via the GitHub repository. We welcome the original authors of the tested algorithms to submit their own test results, which we will replace accordingly.
-                            </p>
-                        </div>
-                    </div>      
                     <div id="leaderboard" class="leaderboard">
                         <table class="table is-fullwidth is-striped is-hoverable">
                             <thead>
                                 <tr style="text-align: center;">
-                                    <th style="text-align: center;">Rank</th>
+                                    <th style="text-align: center;">Submission Date</th>
                                     <th style="text-align: center;">Method</th>
                                     <th style="text-align: center;">Setting</th>
                                     <th style="text-align: center;">Code</th>
-                                    <th style="text-align: center;">Average Error</th>
+                                    <th style="text-align: center;">Error Report</th>
                                     <th style="text-align: center;">Environment</th>
                                 </tr>
                             </thead>
                             <tbody style="text-align: center;"></tbody>
                                 <tr>
-                                    <td style="text-align: center;">1</td>
-                                    <td style="text-align: center;"><a href="static/html/COIN_LIO.html" style="text-decoration: underline dotted; color: blue;">COIN-LIO</a></td>
-                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;">1/4/2025</td>
+                                    <td style="text-align: center;"><a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/abstract/document/10610938" style="text-decoration: underline dotted; color: blue;">COIN-LIO<sup>°</sup></a></td>
+                                    <td style="text-align: center;">
+                                        <img src="static/images/lidar.png" style="height: 1em;">
+                                        <img src="static/images/imu.png" style="height: 1em;">
+                                    </td></td>
                                     <td style="text-align: center;"><a href="https://github.com/ethz-asl/COIN-LIO" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
-                                    <td style="text-align: center;">21.43</td>
+                                    <!-- <td style="text-align: center;">21.43</td> -->
+                                    <td style="text-align: center;"><a href="static/html/COIN_LIO.html" style="text-decoration: underline dotted; color: blue;">Report</a></td>
                                     <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
                                 </tr>
 
                                 <tr>
-                                    <td style="text-align: center;">2</td>
-                                    <td style="text-align: center;"><a href="static/html/FAST_LIVO.html" style="text-decoration: underline dotted; color: blue;">FAST-LIVO</a></td>
-                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;">1/4/2025</td>
+                                    <td style="text-align: center;"><a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/abstract/document/9981107" style="text-decoration: underline dotted; color: blue;">FAST-LIVO<sup>°</sup></a></td>
+                                    <td style="text-align: center;">
+                                        <img src="static/images/lidar.png" style="height: 1em;">
+                                        <img src="static/images/imu.png" style="height: 1em;">
+                                        <img src="static/images/mono.png" style="height: 1em;">
+                                    </td></td>
                                     <td style="text-align: center;"><a href="https://github.com/hku-mars/FAST-LIVO" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
-                                    <td style="text-align: center;">32.71</td>
+                                    <!-- <td style="text-align: center;">32.71</td> -->
+                                    <td style="text-align: center;"><a href="static/html/FAST_LIVO.html" style="text-decoration: underline dotted; color: blue;">Report</a></td>
                                     <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
                                 </tr>
 
                                 <tr>
-                                    <td style="text-align: center;">3</td>
-                                    <td style="text-align: center;"><a href="static/html/FAST_LIO.html" style="text-decoration: underline dotted; color: blue;">FAST-LIO2</a></td>
-                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;">1/4/2025</td>
+                                    <td style="text-align: center;"><a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/abstract/document/9697912" style="text-decoration: underline dotted; color: blue;">FAST-LIO2<sup>°</sup></a></td>
+                                    <td style="text-align: center;">
+                                        <img src="static/images/lidar.png" style="height: 1em;">
+                                        <img src="static/images/imu.png" style="height: 1em;">
+                                    </td></td>
                                     <td style="text-align: center;"><a href="https://github.com/hku-mars/FAST_LIO" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
-                                    <td style="text-align: center;">34.77</td>
+                                    <!-- <td style="text-align: center;">34.77</td> -->
+                                    <td style="text-align: center;"><a href="static/html/FAST_LIO.html" style="text-decoration: underline dotted; color: blue;">Report</a></td>
                                     <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
                                 </tr>
 
 
                                 <tr>
-                                    <td style="text-align: center;">4</td>
-                                    <td style="text-align: center;"><a href="static/html/DLIO.html" style="text-decoration: underline dotted; color: blue;">DLIO</a></td>
-                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;">1/4/2025</td>
+                                    <td style="text-align: center;"><a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/document/10160508" style="text-decoration: underline dotted; color: blue;">DLIO<sup>°</sup></a></td>
+                                    <td style="text-align: center;">
+                                        <img src="static/images/lidar.png" style="height: 1em;">
+                                        <img src="static/images/imu.png" style="height: 1em;">
+                                    </td></td>
                                     <td style="text-align: center;"><a href="https://github.com/vectr-ucla/direct_lidar_inertial_odometry" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
-                                    <td style="text-align: center;">44.92</td>
+                                    <!-- <td style="text-align: center;">44.92</td> -->
+                                    <td style="text-align: center;"><a href="static/html/DLIO.html" style="text-decoration: underline dotted; color: blue;">Report</a></td>
                                     <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
                                 </tr>
 
                                 <tr>
-                                    <td style="text-align: center;">5</td>
-                                    <td style="text-align: center;"><a href="static/html/coco_lic.html" style="text-decoration: underline dotted; color: blue;">Coco_lic</a></td>
-                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;">1/4/2025</td>
+                                    <td style="text-align: center;"><a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/abstract/document/10251629" style="text-decoration: underline dotted; color: blue;">Coco_LIC<sup>°</sup></a></td>
+                                    <td style="text-align: center;">
+                                        <img src="static/images/lidar.png" style="height: 1em;">
+                                        <img src="static/images/imu.png" style="height: 1em;">
+                                        <img src="static/images/mono.png" style="height: 1em;">
+                                    </td></td>
                                     <td style="text-align: center;"><a href="https://github.com/APRIL-ZJU/Coco-LIC" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
-                                    <td style="text-align: center;">50.64</td>
+                                    <!-- <td style="text-align: center;">50.64</td> -->
+                                    <td style="text-align: center;"><a href="static/html/coco_lic.html" style="text-decoration: underline dotted; color: blue;">Report</a></td>
                                     <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
                                 </tr>
 
                                 <tr>
-                                    <td style="text-align: center;">6</td>
-                                    <td style="text-align: center;"><a href="static/html/R3LIVE.html" style="text-decoration: underline dotted; color: blue;">R3LIVE</a></td>
-                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;">1/4/2025</td>
+                                    <td style="text-align: center;"><a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/abstract/document/9811935" style="text-decoration: underline dotted; color: blue;">R3LIVE<sup>°</sup></a></td>
+                                    <td style="text-align: center;">
+                                        <img src="static/images/lidar.png" style="height: 1em;">
+                                        <img src="static/images/imu.png" style="height: 1em;">
+                                        <img src="static/images/mono.png" style="height: 1em;">
+                                    </td></td>
                                     <td style="text-align: center;"><a href="https://github.com/hku-mars/r3live" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
-                                    <td style="text-align: center;">64.85</td>
+                                    <!-- <td style="text-align: center;">64.85</td> -->
+                                    <td style="text-align: center;"><a href="static/html/R3LIVE.html" style="text-decoration: underline dotted; color: blue;">Report</a></td>
                                     <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
                                 </tr>
 
                                 <tr>
-                                    <td style="text-align: center;">7</td>
-                                    <td style="text-align: center;"><a href="static/html/LVI_SAM.html" style="text-decoration: underline dotted; color: blue;">LVI-SAM</a></td>
-                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;">1/4/2025</td>
+                                    <td style="text-align: center;"><a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/abstract/document/9561996" style="text-decoration: underline dotted; color: blue;">LVI-SAM<sup>°</sup></a></td>
+                                    <td style="text-align: center;">
+                                        <img src="static/images/lidar.png" style="height: 1em;">
+                                        <img src="static/images/imu.png" style="height: 1em;">
+                                        <img src="static/images/mono.png" style="height: 1em;">
+                                    </td></td>
                                     <td style="text-align: center;"><a href="https://github.com/TixiaoShan/LVI-SAM" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
-                                    <td style="text-align: center;">66.19</td>
+                                    <!-- <td style="text-align: center;">66.19</td> -->
+                                    <td style="text-align: center;"><a href="static/html/LVI_SAM.html" style="text-decoration: underline dotted; color: blue;">Report</a></td>
                                     <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
                                 </tr>
 
                                 <tr>
-                                    <td style="text-align: center;">8</td>
-                                    <td style="text-align: center;"><a href="static/html/LIO_SAM.html" style="text-decoration: underline dotted; color: blue;">LIO-SAM</a></td>
-                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;">1/4/2025</td>
+                                    <td style="text-align: center;"><a href="https://ieeexplore-ieee-org.eproxy.lib.hku.hk/abstract/document/9341176" style="text-decoration: underline dotted; color: blue;">LIO-SAM<sup>°</sup></a></td>
+                                    <td style="text-align: center;">
+                                        <img src="static/images/lidar.png" style="height: 1em;">
+                                        <img src="static/images/imu.png" style="height: 1em;">
+                                    </td></td>
                                     <td style="text-align: center;"><a href="https://github.com/TixiaoShan/LIO-SAM" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
-                                    <td style="text-align: center;">69.34</td>
+                                    <!-- <td style="text-align: center;">69.34</td> -->
+                                    <td style="text-align: center;"><a href="static/html/LIO_SAM.html" style="text-decoration: underline dotted; color: blue;">Report</a></td>
                                     <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
                                 </tr>
                             </tbody>
