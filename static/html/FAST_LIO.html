@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Improved Tables</title>
+    <style>
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        caption {
+            font-size: 1.5em;
+            margin: 10px 0;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+            color: #333;
+        }
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        tr:hover {
+            background-color: #f1f1f1;
+        }
+        td {
+            color: blue;
+        }
+    </style>
+</head>
+<body>
+
+<table>
+    <caption>Offroad</caption>
+    <tr>
+        <th rowspan="2">α</th>
+        <th>01</th>
+        <th>02</th>
+        <th>03</th>
+        <th>04</th>
+        <th>05</th>
+        <th>06</th>
+        <th>07</th>
+    </tr>
+    <tr>
+        <td>0.18</td>
+        <td>0.39</td>
+        <td>0.33</td>
+        <td>0.43</td>
+        <td>0.30</td>
+        <td>0.22</td>
+        <td>0.26</td>
+    </tr>
+    <tr>
+        <th rowspan="2">β</th>
+        <th>01</th>
+        <th>02</th>
+        <th>03</th>
+        <th>04</th>
+        <th>05</th>
+        <th>06</th>
+        <th>07</th>
+    </tr>
+    <tr>
+        <td>0.12</td>
+        <td>0.31</td>
+        <td>0.34</td>
+        <td>0.14</td>
+        <td>0.19</td>
+        <td>0.15</td>
+        <td>0.11</td>
+    </tr>
+    <tr>
+        <th rowspan="2">γ</th>
+        <th>01</th>
+        <th>02</th>
+        <th>03</th>
+        <th>04</th>
+        <th>05</th>
+        <th>06</th>
+        <th>07</th>
+    </tr>
+    <tr>
+        <td>0.09</td>
+        <td>0.11</td>
+        <td>0.09</td>
+        <td>&#10008;</td>
+        <td>0.13</td>
+        <td>0.12</td>
+        <td>0.16</td>
+    </tr>
+</table>
+
+<table>
+    <caption>Inland Waterways</caption>
+    <tr>
+        <th rowspan="2">α</th>
+        <th>Short</th>
+        <th>Medium</th>
+        <th>Long</th>
+    </tr>
+    <tr>
+        <td>10.27</td>
+        <td>19.69</td>
+        <td>70.26</td>
+    </tr>
+    <tr>
+        <th rowspan="2">β</th>
+        <th>Short</th>
+        <th>Medium</th>
+        <th>Long</th>
+    </tr>
+    <tr>
+        <td>0.29</td>
+        <td>0.57</td>
+        <td>0.99</td>
+    </tr>
+    <tr>
+        <th rowspan="2">γ</th>
+        <th>Short</th>
+        <th>Medium</th>
+        <th>Long</th>
+    </tr>
+    <tr>
+        <td>0.24</td>
+        <td>1.82</td>
+        <td>6.90</td>
+    </tr>
+</table>
+
+<table>
+    <caption>Metro Tunnels</caption>
+    <tr>
+        <th rowspan="2">α</th>
+        <th>Tunneling2</th>
+        <th>Tunneling3</th>
+        <th>Tunneling4</th>
+        <th>Tunneling5</th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>&#10008;</td>
+        <td>0.21</td>
+        <td>0.24</td>
+        <td>0.19</td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th rowspan="2">β</th>
+        <th>Shield7</th>
+        <th>Shield8</th>
+        <th>Shield9</th>
+        <th>Shield10</th>
+        <th>Tunneling2</th>
+        <th>Tunneling3</th>
+        <th>Tunneling4</th>
+        <th>Tunneling5</th>
+        <th></th>
+        <th></th>
+        <th></th>
+    </tr>
+    <tr>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>0.14</td>
+        <td>0.17</td>
+        <td>0.17</td>
+        <td>0.12</td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+    <tr>
+        <th rowspan="2">γ</th>
+        <th>Tunneling1</th>
+        <th>Tunneling2</th>
+        <th>Tunneling3</th>
+        <th>Tunneling4</th>
+        <th>Tunneling5</th>
+        <th>Shield1</th>
+        <th>Shield2</th>
+        <th>Shield3</th>
+        <th>Shield4</th>
+        <th>Shield5</th>
+        <th>Shield6</th>
+    </tr>
+    <tr>
+        <td>1.16</td>
+        <td>1.88</td>
+        <td>0.19</td>
+        <td>0.15</td>
+        <td>0.27</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+    </tr>
+</table>
+
+
+
+<table>
+    <caption>Stairs</caption>
+    <tr>
+        <th>α</th>
+        <th>β</th>
+        <th>γ</th>
+    </tr>
+    <tr>
+        <td>4.69</td>
+        <td>0.38</td>
+        <td>&#10008;</td>
+    </tr>
+</table>
+
+
+<table>
+    <caption>Bridge</caption>
+    <tr>
+        <th rowspan="2">α</th>
+        <th>01</th>
+        <th>02</th>
+        <th>03</th>
+    </tr>
+    <tr>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+    </tr>
+</table>
+
+<table>
+    <caption>Urban Tunnels</caption>
+    <tr>
+        <th rowspan="2">α</th>
+        <th>01</th>
+        <th>02</th>
+        <th>03</th>
+    </tr>
+    <tr>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+    </tr>
+</table>
+
+<table>
+    <caption>Flat Ground</caption>
+    <tr>
+        <th rowspan="2">γ</th>
+        <th>smooth</th>
+        <th>aggressive</th>
+    </tr>
+    <tr>
+        <td>&#10008;</td>
+        <td>&#10008;</td>
+    </tr>
+</table>
+
+</body>
+</html>

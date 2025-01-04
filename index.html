@@ -119,6 +119,16 @@
                                         <span>arXiv</span>
                                     </a>
                                 </span>
+                                <!-- Google Drive Download Link -->
+                                <span class="link-block">
+                                    <a href="https://drive.google.com/drive/folders/1hEn3sBAvQhSdUFnGMZCCv-W0Ynj2rWBs?usp=sharing" target="_blank"
+                                    class="external-link button is-normal is-rounded is-dark">
+                                        <span class="icon">
+                                            <i class="fas fa-cloud-download-alt"></i>
+                                        </span>
+                                        <span>Download Data</span>
+                                    </a>
+                                </span></span>
                             <!-- New Page Link -->
                             <span class="link-block">
                                 <a href="#LiveLeaderboard" class="external-link button is-normal is-rounded is-dark">
@@ -1609,7 +1619,15 @@
                         <div class="column is-four-fifths">
                             <h2 class="title is-3">Live Leaderboard </h2>
                         </div>
-                    </div>     
+                    </div>    
+                    <div style="border: 2px solid black; padding: 20px; margin: 20px auto; max-width: 800px; text-align: left; border-radius: 15px;">
+                        <b><u style="display: block; text-align: center;">Additional information used by the methods</u></b>
+                        <ul style="list-style-type: none; padding: 0;">
+                            <li><img src="./The KITTI Vision Benchmark Suite_files/icon_st.png"> Stereo: Method uses left and right (stereo) images</li>
+                            <li><img src="./The KITTI Vision Benchmark Suite_files/icon_la.png"> Laser Points: Method uses point clouds from Velodyne laser scanner</li>
+                            <li><img src="./The KITTI Vision Benchmark Suite_files/icon_lc.png"> Loop Closure Detection: This method is a SLAM method that detects loop closures</li>
+                        </ul>
+                    </div>
                     <div class="columns is-centered has-text-left">
                         <div class="column is-full">
                             <p style="text-align: left;"></p>
@@ -1626,120 +1644,100 @@
                             </p>
                         </div>
                     </div>      
-                    <div class="columns is-centered has-text-centered">
-                        <div class="column is-one-quarter">
-                            <button id="button-leaderboard1" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard1')">Leaderboard Ouster64</button>
-                        </div>
-                        <div class="column is-one-quarter">
-                            <button id="button-leaderboard2" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard2')">Leaderboard Livox Aiva</button>
-                        </div>
-                        <div class="column is-one-quarter">
-                            <button id="button-leaderboard3" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard3')">Leaderboard VLP16</button>
-                        </div>
-                        <div class="column is-one-quarter">
-                            <button id="button-leaderboard4" class="button is-dark is-fullwidth" onclick="showLeaderboard('leaderboard4')">Leaderboard Multi-LiDAR</button>
-                        </div>
-                    </div>
-
-                    <div id="leaderboard1" class="leaderboard">
-                        <table class="table is-fullwidth">
+                    <div id="leaderboard" class="leaderboard">
+                        <table class="table is-fullwidth is-striped is-hoverable">
                             <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Method</th>
-                                    <th>Setting</th>
-                                    <th>Code</th>
-                                    <th>Average Error</th>
-                                    <th>Runtime</th>
-                                    <th>Environment</th>
+                                <tr style="text-align: center;">
+                                    <th style="text-align: center;">Rank</th>
+                                    <th style="text-align: center;">Method</th>
+                                    <th style="text-align: center;">Setting</th>
+                                    <th style="text-align: center;">Code</th>
+                                    <th style="text-align: center;">Average Error</th>
+                                    <th style="text-align: center;">Environment</th>
                                 </tr>
                             </thead>
-                            <tbody>
-                                <!-- Add rows for leaderboard 1 -->
+                            <tbody style="text-align: center;"></tbody>
+                                <tr>
+                                    <td style="text-align: center;">1</td>
+                                    <td style="text-align: center;"><a href="static/html/COIN_LIO.html" style="text-decoration: underline dotted; color: blue;">COIN-LIO</a></td>
+                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;"><a href="https://github.com/ethz-asl/COIN-LIO" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
+                                    <td style="text-align: center;">21.43</td>
+                                    <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center;">2</td>
+                                    <td style="text-align: center;"><a href="static/html/FAST_LIVO.html" style="text-decoration: underline dotted; color: blue;">FAST-LIVO</a></td>
+                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;"><a href="https://github.com/hku-mars/FAST-LIVO" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
+                                    <td style="text-align: center;">32.71</td>
+                                    <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center;">3</td>
+                                    <td style="text-align: center;"><a href="static/html/FAST_LIO.html" style="text-decoration: underline dotted; color: blue;">FAST-LIO2</a></td>
+                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;"><a href="https://github.com/hku-mars/FAST_LIO" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
+                                    <td style="text-align: center;">34.77</td>
+                                    <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
+                                </tr>
+
+
+                                <tr>
+                                    <td style="text-align: center;">4</td>
+                                    <td style="text-align: center;"><a href="static/html/DLIO.html" style="text-decoration: underline dotted; color: blue;">DLIO</a></td>
+                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;"><a href="https://github.com/vectr-ucla/direct_lidar_inertial_odometry" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
+                                    <td style="text-align: center;">44.92</td>
+                                    <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center;">5</td>
+                                    <td style="text-align: center;"><a href="static/html/coco_lic.html" style="text-decoration: underline dotted; color: blue;">Coco_lic</a></td>
+                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;"><a href="https://github.com/APRIL-ZJU/Coco-LIC" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
+                                    <td style="text-align: center;">50.64</td>
+                                    <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center;">6</td>
+                                    <td style="text-align: center;"><a href="static/html/R3LIVE.html" style="text-decoration: underline dotted; color: blue;">R3LIVE</a></td>
+                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;"><a href="https://github.com/hku-mars/r3live" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
+                                    <td style="text-align: center;">64.85</td>
+                                    <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center;">7</td>
+                                    <td style="text-align: center;"><a href="static/html/LVI_SAM.html" style="text-decoration: underline dotted; color: blue;">LVI-SAM</a></td>
+                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;"><a href="https://github.com/TixiaoShan/LVI-SAM" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
+                                    <td style="text-align: center;">66.19</td>
+                                    <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="text-align: center;">8</td>
+                                    <td style="text-align: center;"><a href="static/html/LIO_SAM.html" style="text-decoration: underline dotted; color: blue;">LIO-SAM</a></td>
+                                    <td style="text-align: center;">Default</td>
+                                    <td style="text-align: center;"><a href="https://github.com/TixiaoShan/LIO-SAM" target="_blank" style="text-decoration: underline dotted; color: blue;">Code</a></td>
+                                    <td style="text-align: center;">69.34</td>
+                                    <td style="text-align: center;">6 cores @ 4.6 Ghz (C/C++)</td>
+                                </tr>
                             </tbody>
                         </table>
                     </div>
-
-                    <div id="leaderboard2" class="leaderboard" style="display:none;">
-                        <table class="table is-fullwidth">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Method</th>
-                                    <th>Setting</th>
-                                    <th>Code</th>
-                                    <th>Average Error</th>
-                                    <th>Runtime</th>
-                                    <th>Environment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Add rows for leaderboard 2 -->
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="leaderboard3" class="leaderboard" style="display:none;">
-                        <table class="table is-fullwidth">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Method</th>
-                                    <th>Setting</th>
-                                    <th>Code</th>
-                                    <th>Average Error</th>
-                                    <th>Runtime</th>
-                                    <th>Environment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Add rows for leaderboard 3 -->
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <div id="leaderboard4" class="leaderboard" style="display:none;">
-                        <table class="table is-fullwidth">
-                            <thead>
-                                <tr>
-                                    <th>#</th>
-                                    <th>Method</th>
-                                    <th>Setting</th>
-                                    <th>Code</th>
-                                    <th>Average Error</th>
-                                    <th>Runtime</th>
-                                    <th>Environment</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <!-- Add rows for leaderboard 4 -->
-                            </tbody>
-                        </table>
-                    </div>
-
-                    <script>
-                        function showLeaderboard(id) {
-                            document.querySelectorAll('.leaderboard').forEach(function(leaderboard) {
-                                leaderboard.style.display = 'none';
-                            });
-                            document.getElementById(id).style.display = 'block';
-
-                            document.querySelectorAll('.button[id^="button-leaderboard"]').forEach(function(button) {
-                                button.classList.remove('is-active');
-                                button.style.opacity = '0.5';
-                            });
-                            document.getElementById('button-' + id).classList.add('is-active');
-                            document.getElementById('button-' + id).style.opacity = '1';
-                        }
-
-                        // Initialize the first leaderboard as active
-                        showLeaderboard('leaderboard1');
-                    </script>
                 </div>
             </div>
         </section>
         <!-- End Quantitative Results-->
 
+        
         <!--BibTex citation -->
         <section class="section" id="BibTeX">
             <div class="container is-max-desktop content">
